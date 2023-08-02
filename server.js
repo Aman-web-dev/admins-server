@@ -6,18 +6,15 @@ const cors = require("cors");
 
 
 
-app.use(cors({ origin: '*' }));
 
 
 
 const PORT =process.env.PORT || 5000;
 
-global.PORT=PORT;
 
-console.log(global.PORT)
 console.log(PORT)
 
-app.use(cors({origin:`http://localhost:3000`}));
+app.use(cors({ origin: '*' }));
 
 
 
