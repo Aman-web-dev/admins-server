@@ -14,21 +14,9 @@ const connector = async () => {
 
    const connection = await mongoose.connect(URI, { useNewUrlParser: true });
 
-  //  console.log(connection)
+  console.log("Mongo Db Connected Successfully")
+  global.poolingData=mongoose.connection
 
-    console.log("Mongo Db Connected Successfully")
-   global.poolingData=mongoose.connection
-
-  //  try{
-    
-  //   const fetched= await (await mongoose.connection.db.collection('pooling_data').find({}).toArray())
-  //   global.poolingData=fetched
-  //   // console.log(global.poolingData)
-    
-  
-  // }catch(error){
-  //    console.log(error)
-  // }
 
 
   } catch (error) {
