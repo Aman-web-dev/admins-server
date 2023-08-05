@@ -3,9 +3,13 @@ const express = require("express");
 
 const mongoose = require('mongoose');
 
+require('dotenv').config();
 
 
-const URI = "mongodb+srv://amanzhx1234:election123@cluster0.bjbll35.mongodb.net/data" 
+
+const URI = process.env.MONGO_URI
+
+console.log(URI)
 
 const connector = async () => {
 

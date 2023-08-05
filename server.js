@@ -3,7 +3,7 @@ const app = express();
 const connector = require("./db")
 app.use(express.json());
 const cors = require("cors");
-
+const logger = require('./routers/Logger')
 
 
 
@@ -37,6 +37,9 @@ const dataDelete=require('./routers/DeleteData')
 app.use('/api',dataDelete);
 
 
+const userlogs= require('./routers/LogsRouter')
+app.use('/api',userlogs)
+
 
 if(process.env.NODE_ENV==="production"){
 
@@ -54,8 +57,9 @@ if(process.env.NODE_ENV==="production"){
 
 app.listen(PORT, (err) => {
   if (err) {
-    console.log(err);
+    logger.log('error', `This is The Error  ${err}`);
   }
-  console.log(`Running on port ${PORT}`);
+  console.log(`Running On port ${PORT}`)
+  // logger.log('info', `Running on port ${PORT}`);
 });
 
