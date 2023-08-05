@@ -9,7 +9,6 @@ require('dotenv').config();
 
 const URI = process.env.MONGO_URI
 
-console.log(URI)
 
 const connector = async () => {
 
@@ -18,7 +17,6 @@ const connector = async () => {
 
    const connection = await mongoose.connect(URI, { useNewUrlParser: true });
 
-  console.log("Mongo Db Connected Successfully")
   global.poolingData=mongoose.connection
 
 

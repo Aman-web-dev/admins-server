@@ -12,7 +12,6 @@ const logger = require('./routers/Logger')
 const PORT =process.env.PORT || 5000;
 
 
-console.log(PORT)
 
 app.use(cors({ origin: '*' }));
 
@@ -60,6 +59,5 @@ app.listen(PORT, (err) => {
     logger.log('error', `This is The Error  ${err}`);
   }
   console.log(`Running On port ${PORT}`)
-  // logger.log('info', `Running on port ${PORT}`);
 });
 

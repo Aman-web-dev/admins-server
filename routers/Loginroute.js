@@ -17,7 +17,6 @@ router.post('/login', [
     , async (req, res) => {
       const errors = validationResult(req)
       if (!errors.isEmpty()) {
-        console.log(errors);
         return res.status(400).json({ errors: errors.array() });
       }
       const { email } = req.body
@@ -47,7 +46,6 @@ router.post('/login', [
       catch (error) {
         // res.send(userData)
         logger.log('error', `could Not log into account Due To internal Error ${error}`);
-        console.log(error)
         return res.status(500).json(error)
       }
     })

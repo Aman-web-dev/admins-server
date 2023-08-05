@@ -14,9 +14,7 @@ router.get("/userlogs", async (req, res) => {
       .find({})
       .toArray();
 const slicedData= data
-    console.log([slicedData])
     res.status(201).send([slicedData])
-    // res.status(201).send("Hello sir")
 
   }
   catch (error) {

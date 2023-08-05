@@ -31,9 +31,6 @@ router.get("/loaddata", async (req, res) => {
 
     const paginatedData = data.slice(fromIndex, toIndex);
 
-   console.log(filter)
-  //  console.log([data])
-    console.log(fromIndex,toIndex)
     res.status(201).send([paginatedData])
 
   }

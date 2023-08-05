@@ -9,7 +9,6 @@ router.post('/upload', async (req, res) => {
   try {
     const newData = req.body; 
     const result = await DataModel.create(newData);
-    console.log(newData)
     logger.log('info',`data uploaded on the data Base ${newData}`)
 
     res.status(201).json({ message: 'Data uploaded successfully', data: result });

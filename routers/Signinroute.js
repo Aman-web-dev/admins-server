@@ -17,7 +17,6 @@ router.post('/create', [
     async (req, res) => {
       const errors = validationResult(req)
       if (!errors.isEmpty()) {
-        console.log(errors);
         return res.status(400).json({ errors: errors.array() });
       }
       const salt = await bcrypt.genSalt(10);
@@ -31,14 +30,11 @@ router.post('/create', [
           password: secPass,
           role:req.body.role
         })
-        console.log(newUser);
         logger.log('info', `User Signed Up ${req.body.user_name}`);
         return res.status(201).json(newUser)
       } catch (error) {
         res.send(error)
-        console.log(error);
         logger.log('error', `This is The Error  ${error}`);
-        console.log(error).json(error)
       }
     })  
     
